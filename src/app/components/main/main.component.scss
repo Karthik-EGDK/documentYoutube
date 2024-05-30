@@ -1,0 +1,45 @@
+.dimming-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+}
+
+.left-container {
+  background-color: #ffffff;
+}
+.right-container {
+  background-color: #ffffff;
+}
+.document-card {
+  transition: transform 0.3s ease;
+}
+.document-card:hover {
+  transform: scale(1.05);
+}
+.description-card {
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(45deg, #e0eafc, #cfdef3);
+}
+.description-card:hover {
+  border-color: #007bff;
+  transform: scale(1.05);
+}
+
+.dimmed .card {
+  opacity: 0.5;
+}
+
+.container-custom {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.height-playlist {
+  height: 400px;
+  
+}
