@@ -11,17 +11,29 @@ export class MainComponent {
   cardFunc = async (iid: number) => {
     const cardWindow = document.getElementById('card-frame');
     const cardDescription = document.getElementById('card-desc');
-    const user = document.getElementById('card-author');
+    const author = document.getElementById('card-author');
     const views = document.getElementById('card-view');
     const DOU = document.getElementById('card-DOU');
+    const DocUser = document.getElementById('user');
+    const subscribers = document.getElementById('subscribers');
 
     const dataJson = await fetch(`http://localhost:3000/entries/${iid}`);
     const data = await dataJson.json();
-    if (cardWindow && cardDescription && user && views && DOU) {
+    if (
+      cardWindow &&
+      cardDescription &&
+      author &&
+      views &&
+      DOU &&
+      DocUser &&
+      subscribers
+    ) {
       cardWindow.setAttribute('src', data.pdfLink);
-      console.log(data);
+      // console.log(data);
+      subscribers.innerText = data.subscribers;
       cardDescription.innerText = data.description;
-      user.innerText = data.uploader;
+      DocUser.innerText = data.uploader;
+      author.innerText = data.author;
       views.innerText = data.views;
       DOU.innerText = data.DOU;
       return;
